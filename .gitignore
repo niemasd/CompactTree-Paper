@@ -1,5 +1,5 @@
-# Greengenes2 tree (it's too big for GitHub)
-*.phylogeny.id.nwk
+# tree files (too big for GitHub)
+*.nwk
 
 # compiled executables
 load_tree
