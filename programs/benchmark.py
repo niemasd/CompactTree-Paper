@@ -9,6 +9,7 @@ EXE_SUFFIX = {
     'CompactTree': '',
     'DendroPy':    '_dendropy.py',
     'ETE':         '_ete.py',
+    'scikit-bio':  '_skbio.py',
     'TreeSwift':   '_treeswift.py',
 }
 MAX_N = {
@@ -16,6 +17,7 @@ MAX_N = {
     'CompactTree': float('inf'),
     'DendroPy':          100000,
     'ETE':              1000000,
+    'scikit-bio':       1000000,
     'TreeSwift':        1000000,
 }
 
