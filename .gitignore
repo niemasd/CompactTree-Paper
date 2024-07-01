@@ -3,6 +3,7 @@
 
 # compiled executables
 load_tree
+yule
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
