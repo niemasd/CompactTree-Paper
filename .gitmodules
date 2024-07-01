@@ -1,0 +1,6 @@
+[submodule "submodules/Dual-Birth-Simulator"]
+	path = submodules/Dual-Birth-Simulator
+	url = git@github.com:niemasd/Dual-Birth-Simulator.git
+[submodule "submodules/CompactTree"]
+	path = submodules/CompactTree
+	url = git@github.com:niemasd/CompactTree.git

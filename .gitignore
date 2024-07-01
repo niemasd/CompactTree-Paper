@@ -1,3 +1,9 @@
+# Greengenes2 tree (it's too big for GitHub)
+*.phylogeny.id.nwk
+
+# compiled executables
+load_tree
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
