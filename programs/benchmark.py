@@ -5,14 +5,18 @@ Run the CompactTree benchmarks
 
 # definitions
 EXE_SUFFIX = {
+    'Biopython':   '_biopython.py',
     'CompactTree': '',
-    'DendroPy': '_dendropy.py',
-    'TreeSwift': '_treeswift.py',
+    'DendroPy':    '_dendropy.py',
+    'ETE':         '_ete.py',
+    'TreeSwift':   '_treeswift.py',
 }
 MAX_N = {
+    'Biopython':         100000,
     'CompactTree': float('inf'),
-    'DendroPy': 100000,
-    'TreeSwift': 1000000,
+    'DendroPy':          100000,
+    'ETE':              1000000,
+    'TreeSwift':        1000000,
 }
 
 # imports and check args
