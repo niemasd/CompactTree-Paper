@@ -52,12 +52,12 @@ if not isfile('yule'):
 # run benchmark
 f = open('%s/versions.txt' % outdir, 'w'); run(['pip', 'freeze'], stdout=f)
 f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define VERSION')][0].split()[-1].replace('"',''))
-for n in [100]:#, 1000, 10000, 100000, 1000000]:
+for n in [100, 1000, 10000, 100000, 1000000]:
     print_log("  - Running n = %d" % n)
     n_dir = '%s/n%d' % (outdir, n)
     if not isdir(n_dir):
         mkdir(n_dir)
-    for r in range(1, 2):#11):
+    for r in range(1, 11):
         print_log("    - Running r = %d" % r)
         tree_fn = '%s/n%d.r%s.nwk' % (n_dir, n, str(r).zfill(2))
         f = open(tree_fn, 'w'); run(['./yule', '1', '-n', str(n)], stdout=f); f.close()
