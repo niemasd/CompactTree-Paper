@@ -75,11 +75,10 @@ for fn in glob('%s/*/*.*' % argv[1]):
         assert False, "Invalid results file: %s" % fn
 
 # create figures
-TOOLS = sorted(set(k for bench in DATA for n in DATA[bench] for k in DATA[bench][n]))
 for bench in DATA:
     x = list(); y = list(); h = list()
     for n in sorted(DATA[bench].keys()):
-        for tool in sorted(DATA[bench][n].keys()):
+        for tool in sorted(DATA[bench][n].keys(), key=lambda x: x.upper()):
             y += DATA[bench][n][tool]
             x += [n] * len(DATA[bench][n][tool])
             h += [tool] * len(DATA[bench][n][tool])
@@ -89,6 +88,5 @@ for bench in DATA:
     plt.title(TITLE[bench])
     plt.xlabel('Number of Leaves')
     plt.ylabel('%s (%s)' % (LABEL[bench], UNIT[bench]))
-    #plt.legend(bbox_to_anchor=(0.005, 0.995), loc=2, borderaxespad=0., frameon=True)
     plt.legend(borderaxespad=0., frameon=True)
     fig.savefig('%s.pdf' % bench, format='pdf', bbox_inches='tight')
