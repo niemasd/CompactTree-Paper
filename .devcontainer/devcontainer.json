@@ -1,14 +1,5 @@
 {
   "build": {
     "dockerfile": "Dockerfile"
-  },
-  "customizations": {
-    "codespaces": {
-      "repositories": {
-        "niemasd/CompactTree-Paper": {
-          "permissions": "write-all"
-        }
-      }
-    }
   }
 }
