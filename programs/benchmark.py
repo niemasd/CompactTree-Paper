@@ -14,7 +14,7 @@ EXE_SUFFIX = {
     'TreeSwift':   '_treeswift.py',
 }
 MAX_N = {
-    'bigtree':          1000000,
+    'bigtree':           100000,
     'Biopython':         100000,
     'CompactTree': float('inf'),
     'DendroPy':          100000,
@@ -50,6 +50,8 @@ if not isfile('yule'):
     assert isfile('yule'), "ERROR: Failed to compile 'yule'"
 
 # run benchmark
+f = open('%s/versions.txt' % outdir, 'w'); run(['pip', 'freeze'], stdout=f)
+f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define VERSION')][0].split()[-1].replace('"',''))
 for bench in ['load_tree']:
     print_log("- Running benchmark: %s" % bench)
     for n in [100, 1000, 10000, 100000, 1000000]:
