@@ -19,11 +19,6 @@ jobs:
         rm -rf results && \
         python3 programs/benchmark.py results && \
         zip -9 -r results.zip results/ -x '*.nwk'
-    - name: Create figures
-      run: |
-        rm -f figures/*.pdf && \
-        python3 figures/figures.py && \
-        cp figures/*.pdf .
     - name: Generate release tag
       id: tag
       run: |
@@ -42,6 +37,11 @@ jobs:
         asset_name: results.zip
         tag: ${{ steps.tag.outputs.release_tag }}
         overwrite: true
+    - name: Create figures
+      run: |
+        rm -f figures/*.pdf && \
+        python3 figures/figures.py results/ && \
+        cp figures/*.pdf .
     - name: Upload peak memory figure to release
       uses: svenstaro/upload-release-action@v2
       with:
