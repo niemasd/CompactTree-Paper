@@ -64,7 +64,6 @@ f.write('=== CPU Details ===\n'); f.flush()
 run(['cat', '/proc/cpuinfo'], stdout=f); f.flush()
 f.write('\n'); f.flush()
 f.close()
-exit() # TODO DELETE
 
 # run benchmark
 for n in [100, 1000, 10000, 100000, 1000000]:
