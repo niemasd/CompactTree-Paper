@@ -14,10 +14,10 @@ EXE_SUFFIX = {
     'TreeSwift':   '_treeswift.py',
 }
 MAX_N = {
-    'bigtree':           100000,
-    'Biopython':         100000,
+    'bigtree':          1000000,
+    'Biopython':        1000000,
     'CompactTree': float('inf'),
-    'DendroPy':          100000,
+    'DendroPy':         1000000,
     'ETE':              1000000,
     'scikit-bio':       1000000,
     'TreeSwift':        1000000,
@@ -48,9 +48,25 @@ if not isfile('yule'):
     run(['g++', '-Wall', '-pedantic', '-O3', '-std=c++11', '-o', 'yule', '../submodules/Dual-Birth-Simulator/yule.cpp'], stdout=DEVNULL)
     assert isfile('yule'), "ERROR: Failed to compile 'yule'"
 
-# run benchmark
-f = open('%s/versions.txt' % outdir, 'w'); run(['pip', 'freeze'], stdout=f)
+# write relevant info about the benchmark
+f = open('%s/versions.txt' % outdir, 'w')
+run(['pip', 'freeze'], stdout=f)
 f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define VERSION')][0].split()[-1].replace('"',''))
+f.close()
+f = open('%s/specs.txt' % outdir, 'w')
+f.write('=== Operating System Details ===\n'); f.flush()
+run(['cat', '/etc/os-release'], stdout=f); f.flush()
+f.write('\n'); f.flush()
+f.write('=== RAM Details ===\n'); f.flush()
+run(['free', '--mega'], stdout=f); f.flush()
+f.write('\n'); f.flush()
+f.write('=== CPU Details ===\n'); f.flush()
+run(['cat', '/proc/cpuinfo'], stdout=f); f.flush()
+f.write('\n'); f.flush()
+f.close()
+exit() # TODO DELETE
+
+# run benchmark
 for n in [100, 1000, 10000, 100000, 1000000]:
     print_log("  - Running n = %d" % n)
     n_dir = '%s/n%d' % (outdir, n)

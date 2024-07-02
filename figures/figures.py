@@ -58,7 +58,7 @@ for fn in glob('%s/*/*.*' % argv[1]):
             DATA['mem'][n] = dict()
         if tool not in DATA['mem'][n]:
             DATA['mem'][n][tool] = list()
-        DATA['mem'][n][tool].append(float([l for l in open(fn) if l.strip().startswith('Maximum resident set size (kbytes)')][0].split()[-1]) / 1024)
+        DATA['mem'][n][tool].append(float([l for l in open(fn) if l.strip().startswith('Maximum resident set size (kbytes)')][0].split()[-1]) / 1000)
 
     # handle the program output (runtimes for each benchmark)
     elif fn.endswith('.runtime.tsv'):
