@@ -52,7 +52,7 @@ if not isfile('yule'):
 # run benchmark
 f = open('%s/versions.txt' % outdir, 'w'); run(['pip', 'freeze'], stdout=f)
 f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define VERSION')][0].split()[-1].replace('"',''))
-for bench in ['load_tree']:
+for bench in ['load', 'preorder']:
     print_log("- Running benchmark: %s" % bench)
     for n in [100, 1000, 10000, 100000, 1000000]:
         print_log("  - Running n = %d" % n)
