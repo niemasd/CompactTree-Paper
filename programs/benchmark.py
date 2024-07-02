@@ -29,7 +29,6 @@ from os import chdir, mkdir
 from os.path import abspath, dirname, expanduser, isdir, isfile, realpath
 from subprocess import DEVNULL, run
 from sys import argv, stderr
-from tempfile import TemporaryDirectory
 assert len(argv) == 2, "USAGE: %s <output_directory>" % argv[0]
 
 # helper function to print log messages
