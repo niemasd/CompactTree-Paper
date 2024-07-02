@@ -2,9 +2,7 @@
 *.nwk
 
 # compiled executables
-load
-postorder
-preorder
+benchmark_compact_tree
 yule
 
 # Byte-compiled / optimized / DLL files

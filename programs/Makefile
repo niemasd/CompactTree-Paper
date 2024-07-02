@@ -6,15 +6,11 @@ CXXFLAGS?=-Wall -pedantic -std=c++11
 RELEASEFLAGS?=$(CXXFLAGS) -O3
 
 # executables
-EXES=load postorder preorder
+EXES=benchmark_compact_tree
 
 # compile
 all: $(EXES)
-load: compact_tree.h load.cpp
-	$(CXX) $(RELEASEFLAGS) -o load load.cpp
-postorder: compact_tree.h postorder.cpp
-	$(CXX) $(RELEASEFLAGS) -o postorder postorder.cpp
-preorder: compact_tree.h preorder.cpp
-	$(CXX) $(RELEASEFLAGS) -o preorder preorder.cpp
+benchmark_compact_tree: compact_tree.h benchmark_compact_tree.cpp
+	$(CXX) $(RELEASEFLAGS) -o benchmark_compact_tree benchmark_compact_tree.cpp
 clean:
 	$(RM) -r $(EXES) *.o

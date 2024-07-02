@@ -52,18 +52,18 @@ if not isfile('yule'):
 # run benchmark
 f = open('%s/versions.txt' % outdir, 'w'); run(['pip', 'freeze'], stdout=f)
 f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define VERSION')][0].split()[-1].replace('"',''))
-for bench in ['load', 'preorder', 'postorder']:
-    print_log("- Running benchmark: %s" % bench)
-    for n in [100, 1000, 10000, 100000, 1000000]:
-        print_log("  - Running n = %d" % n)
-        n_dir = '%s/n%d' % (outdir, n); mkdir(n_dir)
-        for r in range(1, 11):
-            print_log("    - Running r = %d" % r)
-            tree_fn = '%s/n%d.r%s.nwk' % (n_dir, n, str(r).zfill(2))
-            f = open(tree_fn, 'w'); run(['./yule', '1', '-n', str(n)], stdout=f); f.close()
-            for tool, tool_suffix in EXE_SUFFIX.items():
-                if n > MAX_N[tool]:
-                    continue
-                print_log("      - Running tool: %s" % tool)
-                tool_prefix = '%s.%s' % (tree_fn, tool); f = open('%s.runtime.txt' % tool_prefix, 'w')
-                run(['/usr/bin/time', '-v', '-o', '%s.usr_bin_time.txt' % tool_prefix, './%s%s' % (bench, tool_suffix), tree_fn], stdout=f); f.close()
+for n in [100]:#, 1000, 10000, 100000, 1000000]:
+    print_log("  - Running n = %d" % n)
+    n_dir = '%s/n%d' % (outdir, n)
+    if not isdir(n_dir):
+        mkdir(n_dir)
+    for r in range(1, 2):#11):
+        print_log("    - Running r = %d" % r)
+        tree_fn = '%s/n%d.r%s.nwk' % (n_dir, n, str(r).zfill(2))
+        f = open(tree_fn, 'w'); run(['./yule', '1', '-n', str(n)], stdout=f); f.close()
+        for tool, tool_suffix in EXE_SUFFIX.items():
+            if n > MAX_N[tool]:
+                continue
+            print_log("      - Running tool: %s" % tool)
+            tool_prefix = '%s.%s' % (tree_fn, tool); f = open('%s.runtime.tsv' % tool_prefix, 'w')
+            run(['/usr/bin/time', '-v', '-o', '%s.usr_bin_time.txt' % tool_prefix, './benchmark_%s' % (tool_suffix), tree_fn], stdout=f); f.close()
