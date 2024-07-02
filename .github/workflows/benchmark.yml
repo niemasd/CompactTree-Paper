@@ -21,7 +21,7 @@ jobs:
         zip -9 -r results.zip results/ -x '*.nwk'
     - name: Create figures
       run: |
-        rm figures/*.pdf && \
+        rm -f figures/*.pdf && \
         python3 figures/figures.py && \
         cp figures/*.pdf .
     - name: Generate release tag
