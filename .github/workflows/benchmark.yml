@@ -1,0 +1,74 @@
+name: Run CompactTree benchmarks
+on: [push]
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+    - name: Set up environment
+      run: |
+        sudo apt-get update && \
+        DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC sudo apt-get install -y g++ git make python3 python3-pip && \
+        sudo -H pip3 install biopython dendropy scikit-bio seaborn treeswift && \
+        sudo -H pip3 install https://github.com/etetoolkit/ete/archive/ete4.zip
+    - name: Run benchmark
+      run: |
+        rm -rf results && \
+        python3 programs/benchmark.py results && \
+        zip -9 -r results.zip results/ -x '*.nwk'
+    - name: Create figures
+      run: |
+        rm figures/*.pdf && \
+        python3 figures/figures.py && \
+        cp figures/*.pdf .
+    - name: Generate release tag
+      id: tag
+      run: |
+        echo "::set-output name=release_tag::$(date +"%Y-%m-%d_%H-%M-%S")"
+    - name: Publish release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.tag.outputs.release_tag }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload benchmark results to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: results.zip
+        asset_name: results.zip
+        tag: ${{ steps.tag.outputs.release_tag }}
+        overwrite: true
+    - name: Upload peak memory figure to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: mem.pdf
+        asset_name: mem.pdf
+        tag: ${{ steps.tag.outputs.release_tag }}
+        overwrite: true
+    - name: Upload load runtime figure to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: load.pdf
+        asset_name: load.pdf
+        tag: ${{ steps.tag.outputs.release_tag }}
+        overwrite: true
+    - name: Upload preorder runtime figure to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: preorder.pdf
+        asset_name: preorder.pdf
+        tag: ${{ steps.tag.outputs.release_tag }}
+        overwrite: true
+    - name: Upload postorder runtime figure to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: postorder.pdf
+        asset_name: postorder.pdf
+        tag: ${{ steps.tag.outputs.release_tag }}
+        overwrite: true
