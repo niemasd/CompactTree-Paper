@@ -5,7 +5,7 @@
   "customizations": {
     "codespaces": {
       "repositories": {
-        "my_org/my_repo": {
+        "niemasd/CompactTree-Paper": {
           "permissions": "write-all"
         }
       }
