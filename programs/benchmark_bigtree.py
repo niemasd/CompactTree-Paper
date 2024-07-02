@@ -7,7 +7,7 @@ from time import time
 start = time()
 tree = newick_to_tree(open(argv[1]).read().strip().rstrip(';'))
 end = time()
-print(end - start)
+print('load\t%s' % (end - start))
 
 # preorder
 total = 0.
@@ -15,7 +15,7 @@ start = time()
 for node in preorder_iter(tree):
     total += node.length
 end = time()
-print(end - start)
+print('preorder\t%s' % (end - start))
 
 # postorder
 total = 0.
@@ -23,4 +23,4 @@ start = time()
 for node in postorder_iter(tree):
     total += node.length
 end = time()
-print(end - start)
+print('postorder\t%s' % (end - start))

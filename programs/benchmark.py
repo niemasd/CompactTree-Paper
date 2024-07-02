@@ -7,7 +7,7 @@ Run the CompactTree benchmarks
 EXE_SUFFIX = {
     'bigtree':     '_bigtree.py',
     'Biopython':   '_biopython.py',
-    'CompactTree': '',
+    'CompactTree': '_compact_tree',
     'DendroPy':    '_dendropy.py',
     'ETE':         '_ete.py',
     'scikit-bio':  '_skbio.py',
@@ -66,4 +66,4 @@ for n in [100]:#, 1000, 10000, 100000, 1000000]:
                 continue
             print_log("      - Running tool: %s" % tool)
             tool_prefix = '%s.%s' % (tree_fn, tool); f = open('%s.runtime.tsv' % tool_prefix, 'w')
-            run(['/usr/bin/time', '-v', '-o', '%s.usr_bin_time.txt' % tool_prefix, './benchmark_%s' % (tool_suffix), tree_fn], stdout=f); f.close()
+            run(['/usr/bin/time', '-v', '-o', '%s.usr_bin_time.txt' % tool_prefix, './benchmark%s' % (tool_suffix), tree_fn], stdout=f); f.close()

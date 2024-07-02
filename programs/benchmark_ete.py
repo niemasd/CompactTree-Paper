@@ -7,15 +7,14 @@ from time import time
 start = time()
 tree = Tree(open(argv[1]), parser=1)
 end = time()
-print(end - start)
-
+print('load\t%s' % (end - start))
 # preorder
 total = 0.
 start = time()
 for node in tree.traverse('preorder'):
     total += node.dist
 end = time()
-print(end - start)
+print('preorder\t%s' % (end - start))
 
 # postorder
 total = 0.
@@ -23,4 +22,4 @@ start = time()
 for node in tree.traverse('postorder'):
     total += node.dist
 end = time()
-print(end - start)
+print('postorder\t%s' % (end - start))

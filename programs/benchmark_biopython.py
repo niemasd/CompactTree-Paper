@@ -7,7 +7,7 @@ from time import time
 start = time()
 tree = Phylo.read(argv[1], 'newick')
 end = time()
-print(end - start)
+print('load\t%s' % (end - start))
 
 # preorder
 total = 0.
@@ -15,7 +15,7 @@ start = time()
 for node in tree.find_clades(order='preorder'):
     total += node.branch_length
 end = time()
-print(end - start)
+print('preorder\t%s' % (end - start))
 
 # postorder
 total = 0.
@@ -23,4 +23,4 @@ start = time()
 for node in tree.find_clades(order='postorder'):
     total += node.branch_length
 end = time()
-print(end - start)
+print('postorder\t%s' % (end - start))
