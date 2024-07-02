@@ -5,6 +5,7 @@ Run the CompactTree benchmarks
 
 # definitions
 EXE_SUFFIX = {
+    'bigtree':     '_bigtree.py',
     'Biopython':   '_biopython.py',
     'CompactTree': '',
     'DendroPy':    '_dendropy.py',
@@ -13,6 +14,7 @@ EXE_SUFFIX = {
     'TreeSwift':   '_treeswift.py',
 }
 MAX_N = {
+    'bigtree':          1000000,
     'Biopython':         100000,
     'CompactTree': float('inf'),
     'DendroPy':          100000,
@@ -50,7 +52,7 @@ if not isfile('yule'):
 # run benchmark
 for bench in ['load_tree']:
     print_log("- Running benchmark: %s" % bench)
-    for n in [100, 1000, 10000, 100000]:#, 1000000]:
+    for n in [100, 1000, 10000, 100000, 1000000]:
         print_log("  - Running n = %d" % n)
         n_dir = '%s/n%d' % (outdir, n); mkdir(n_dir)
         for r in range(1, 11):
