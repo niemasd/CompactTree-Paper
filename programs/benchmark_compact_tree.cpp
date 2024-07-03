@@ -19,6 +19,7 @@ int main(int argc, char** argv) {
     end = std::chrono::system_clock::now();
     elapsed = end - start;
     std::cout << "preorder\t" << elapsed.count() << std::endl;
+    std::cout << "result preorder\t" << total_pre << std::endl;
 
     // postorder
     double total_post = 0.;
@@ -30,5 +31,6 @@ int main(int argc, char** argv) {
     end = std::chrono::system_clock::now();
     elapsed = end - start;
     std::cout << "postorder\t" << elapsed.count() << std::endl;
+    std::cout << "result postorder\t" << total_post << std::endl;
     return 0;
 }

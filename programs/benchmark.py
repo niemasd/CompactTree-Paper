@@ -74,6 +74,7 @@ for n in [100, 1000, 10000, 100000, 1000000, 10000000]:
     for r in range(1, 11):
         print_log("    - Running r = %d" % r)
         tree_fn = '%s/n%d.r%s.nwk' % (n_dir, n, str(r).zfill(2))
+        print_log("      - Simulating tree...")
         f = open(tree_fn, 'w'); run(['./yule', '1', '-n', str(n)], stdout=f); f.close()
         for tool, tool_suffix in EXE_SUFFIX.items():
             if n > MAX_N[tool]:

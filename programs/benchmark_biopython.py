@@ -16,6 +16,7 @@ for node in tree.find_clades(order='preorder'):
     total += node.branch_length
 end = time()
 print('preorder\t%s' % (end - start))
+print('result preorder\t%s' % total)
 
 # postorder
 total = 0.
@@ -24,3 +25,4 @@ for node in tree.find_clades(order='postorder'):
     total += node.branch_length
 end = time()
 print('postorder\t%s' % (end - start))
+print('result postorder\t%s' % total)

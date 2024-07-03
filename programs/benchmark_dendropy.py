@@ -16,6 +16,7 @@ for node in tree.preorder_node_iter():
     total += node.edge_length
 end = time()
 print('preorder\t%s' % (end - start))
+print('result preorder\t%s' % total)
 
 # postorder
 total = 0.
@@ -24,3 +25,4 @@ for node in tree.preorder_node_iter():
     total += node.edge_length
 end = time()
 print('postorder\t%s' % (end - start))
+print('result postorder\t%s' % total)

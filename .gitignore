@@ -1,5 +1,8 @@
-# tree files (too big for GitHub)
+# output files
 *.nwk
+*.pdf
+*.tsv
+*.txt
 
 # compiled executables
 benchmark_compact_tree

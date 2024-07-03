@@ -64,6 +64,8 @@ for fn in glob('%s/*/*.*' % argv[1]):
     elif fn.endswith('.runtime.tsv'):
         for l in open(fn):
             bench, v = [x.strip() for x in l.split('\t')]
+            if bench.startswith('result '):
+                continue # this is the trivial task's output (for verification)
             if n not in DATA[bench]:
                 DATA[bench][n] = dict()
             if tool not in DATA[bench][n]:
