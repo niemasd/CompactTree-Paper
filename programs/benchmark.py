@@ -66,7 +66,7 @@ f.write('\n'); f.flush()
 f.close()
 
 # run benchmark
-for n in [100, 1000, 10000, 100000, 1000000]:
+for n in [100, 1000, 10000, 100000, 1000000, 10000000]:
     print_log("  - Running n = %d" % n)
     n_dir = '%s/n%d' % (outdir, n)
     if not isdir(n_dir):
