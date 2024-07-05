@@ -13,7 +13,8 @@ jobs:
         sudo apt-get update && \
         DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC sudo apt-get install -y g++ git make python3 python3-pip && \
         sudo -H pip3 install --force-reinstall --no-binary setuptools==70.2.0 setuptools-scm==8.0.4 && \
-        sudo -H pip3 install --force-reinstall --no-binary cython==0.29.37 meson-python==0.16.0 ninja==1.11.1.1 nose==1.3.7 numpy==2.0.0 pandas==1.5.3 scikit-bio==0.6.1 wheel==0.43.0 && \
+        sudo -H pip3 install --force-reinstall cython==0.29.37 && \
+        sudo -H pip3 install --force-reinstall --no-binary meson-python==0.16.0 ninja==1.11.1.1 nose==1.3.7 numpy==2.0.0 pandas==1.5.3 scikit-bio==0.6.1 wheel==0.43.0 && \
         sudo -H pip3 install --no-binary bigtree biopython dendropy iow seaborn treeswift && \
         sudo -H pip3 install --no-binary https://github.com/etetoolkit/ete/archive/ete4.zip
     - name: Run benchmark
