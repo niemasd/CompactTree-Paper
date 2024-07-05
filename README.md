@@ -4,6 +4,7 @@ Repository to store data/figures for CompactTree paper
 ## Tools
 * [bigtree](https://github.com/kayjan/bigtree)
 * [Biopython](https://biopython.org/)
+* [bp](https://github.com/biocore/improved-octo-waddle)
 * [CompactTree](https://github.com/niemasd/CompactTree)
 * [DendroPy](https://github.com/jeetsukumaran/DendroPy)
 * [ETE](https://github.com/etetoolkit/ete)

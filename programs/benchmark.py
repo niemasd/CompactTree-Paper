@@ -7,6 +7,7 @@ Run the CompactTree benchmarks
 EXE_SUFFIX = {
     'bigtree':     '_bigtree.py',
     'Biopython':   '_biopython.py',
+    'bp':          '_bp.py',
     'CompactTree': '_compact_tree',
     'DendroPy':    '_dendropy.py',
     'ETE':         '_ete.py',
@@ -16,6 +17,7 @@ EXE_SUFFIX = {
 MAX_N = {
     'bigtree':          1000000,
     'Biopython':        1000000,
+    'bp':               1000000,
     'CompactTree': float('inf'),
     'DendroPy':         1000000,
     'ETE':              1000000,
