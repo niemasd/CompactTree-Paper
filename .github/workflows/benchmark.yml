@@ -12,7 +12,7 @@ jobs:
       run: |
         sudo apt-get update && \
         DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC sudo apt-get install -y g++ git make python3 python3-numpy python3-pandas python3-pip && \
-        sudo -H pip3 install --upgrade setuptools && \
+        sudo -H pip3 install setuptools-scm==8.1.0 && \
         sudo -H pip3 install cython==0.29.37 && \
         sudo -H pip3 install --no-binary :all: iow && \
         sudo -H pip3 install bigtree biopython dendropy scikit-bio seaborn treeswift && \
