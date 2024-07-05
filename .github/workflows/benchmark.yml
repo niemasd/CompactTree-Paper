@@ -19,8 +19,6 @@ jobs:
         auto-activate-base: false
     - name: Run benchmark
       run: |
-        zip -9 programs.zip programs/ && \ # TODO DELETE
-        python3 -c "print('hi')" && \ # TODO DELETE
         rm -rf results && \
         python3 programs/benchmark.py results && \
         zip -9 -r results.zip results/ -x '*.nwk'
