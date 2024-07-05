@@ -1,0 +1,16 @@
+name: benchmark-env
+channels:
+- conda-forge
+- defaults
+dependencies:
+- python==3.8
+- numpy
+- cython
+- pip:
+  - bigtree
+  - biopython
+  - dendropy
+  - iow
+  - seaborn
+  - treeswift
+  - https://github.com/etetoolkit/ete/archive/ete4.zip
