@@ -13,5 +13,6 @@ dependencies:
   - dendropy
   - iow
   - seaborn
+  - scikit-bio==0.6.2
   - treeswift
   - https://github.com/etetoolkit/ete/archive/ete4.zip
