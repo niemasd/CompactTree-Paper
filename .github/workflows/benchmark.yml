@@ -19,6 +19,12 @@ jobs:
         auto-activate-base: false
     - name: Run benchmark
       run: |
+        wget -qO- "https://github.com/lczech/genesis/archive/refs/tags/v0.32.0.tar.gz" | tar -zx && \
+        cd genesis-* && \
+        make && \
+        cp ../programs/benchmark_genesis.cpp apps/ && \
+        make update && \
+        cd .. && \
         rm -rf results && \
         python3 programs/benchmark.py results && \
         zip -9 -r results.zip results/ -x '*.nwk'

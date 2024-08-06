@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+./genesis-*/bin/apps/benchmark_genesis "$@"

@@ -11,6 +11,7 @@ EXE_SUFFIX = {
     'CompactTree': '_compact_tree',
     'DendroPy':    '_dendropy.py',
     'ETE':         '_ete.py',
+    'genesis':     '_genesis',
     'scikit-bio':  '_skbio.py',
     'TreeSwift':   '_treeswift.py',
 }
@@ -21,6 +22,7 @@ MAX_N = {
     'CompactTree': float('inf'),
     'DendroPy':         1000000,
     'ETE':              1000000,
+    'genesis':     float('inf'),
     'scikit-bio':       1000000,
     'TreeSwift':        1000000,
 }
@@ -54,6 +56,7 @@ if not isfile('yule'):
 f = open('%s/versions.txt' % outdir, 'w')
 run(['pip', 'freeze'], stdout=f)
 f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define VERSION')][0].split()[-1].replace('"',''))
+f.write('genesis==0.32.0\n')
 f.close()
 f = open('%s/specs.txt' % outdir, 'w')
 f.write('=== Operating System Details ===\n'); f.flush()
