@@ -4,6 +4,3 @@
 [submodule "submodules/CompactTree"]
 	path = submodules/CompactTree
 	url = https://github.com/niemasd/CompactTree.git
-[submodule "submodules/genesis"]
-	path = submodules/genesis
-	url = https://github.com/lczech/genesis.git
