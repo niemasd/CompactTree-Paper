@@ -30,7 +30,7 @@ The most recent results and figures can be found here:
 * [CompactTree](https://github.com/niemasd/CompactTree)
 * [DendroPy](https://github.com/jeetsukumaran/DendroPy)
 * [ETE](https://github.com/etetoolkit/ete)
-* [genesis](http://genesis-lib.org/)
+* [genesis](https://github.com/lczech/genesis)
 * [scikit-bio](https://scikit.bio/)
 * [TreeSwift](https://github.com/niemasd/TreeSwift)
 
