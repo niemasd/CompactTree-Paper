@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./genesis-*/bin/apps/benchmark_genesis "$@"
+$(realpath ./genesis-*/bin/apps/benchmark_genesis) "$@"
