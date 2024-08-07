@@ -2,7 +2,7 @@ name: Run CompactTree benchmarks
 on: [push]
 jobs:
   benchmark:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         shell: bash -l {0}
@@ -25,6 +25,7 @@ jobs:
         cp ../programs/benchmark_genesis.cpp apps/ && \
         make update && \
         cd .. && \
+        pip3 install CompactTree && \
         rm -rf results && \
         python3 programs/benchmark.py results && \
         zip -9 -r results.zip results/ -x '*.nwk'
