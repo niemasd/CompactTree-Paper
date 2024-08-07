@@ -55,7 +55,7 @@ if not isfile('yule'):
 # write relevant info about the benchmark
 f = open('%s/versions.txt' % outdir, 'w')
 run(['pip', 'freeze'], stdout=f)
-f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define VERSION')][0].split()[-1].replace('"',''))
+f.write('compact_tree==%s\n' % [l for l in open('compact_tree.h') if l.strip().startswith('#define COMPACTTREE_VERSION')][0].split()[-1].replace('"',''))
 f.write('genesis==0.32.0\n')
 f.close()
 f = open('%s/specs.txt' % outdir, 'w')
