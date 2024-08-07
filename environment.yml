@@ -10,6 +10,7 @@ dependencies:
 - pip:
   - bigtree
   - biopython
+  - CompactTree
   - dendropy
   - iow
   - seaborn
