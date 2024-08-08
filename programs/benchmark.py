@@ -5,28 +5,28 @@ Run the CompactTree benchmarks
 
 # definitions
 EXE_SUFFIX = {
-    'bigtree':        '_bigtree.py',
-    'Biopython':      '_biopython.py',
-    'bp':             '_bp.py',
-    'CompactTree':    '_compact_tree',
-    'CompactTree.py': '_compact_tree.py',
-    'DendroPy':       '_dendropy.py',
-    'ETE':            '_ete.py',
-    'genesis':        '_genesis',
-    'scikit-bio':     '_skbio.py',
-    'TreeSwift':      '_treeswift.py',
+    'bigtree':       '_bigtree.py',
+    'Biopython':     '_biopython.py',
+    'bp':            '_bp.py',
+    'CompactTree':   '_compact_tree',
+    'CompactTreePy': '_compact_tree_python.py',
+    'DendroPy':      '_dendropy.py',
+    'ETE':           '_ete.py',
+    'genesis':       '_genesis',
+    'scikit-bio':    '_skbio.py',
+    'TreeSwift':     '_treeswift.py',
 }
 MAX_N = {
-    'bigtree':             1000000,
-    'Biopython':           1000000,
-    'bp':                 10000000,
-    'CompactTree':    float('inf'),
-    'CompactTree.py': float('inf'),
-    'DendroPy':            1000000,
-    'ETE':                 1000000,
-    'genesis':        float('inf'),
-    'scikit-bio':          1000000,
-    'TreeSwift':           1000000,
+    'bigtree':            1000000,
+    'Biopython':          1000000,
+    'bp':                10000000,
+    'CompactTree':   float('inf'),
+    'CompactTreePy': float('inf'),
+    'DendroPy':           1000000,
+    'ETE':                1000000,
+    'genesis':       float('inf'),
+    'scikit-bio':         1000000,
+    'TreeSwift':          1000000,
 }
 
 # imports and check args
