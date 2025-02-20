@@ -3,6 +3,7 @@ channels:
 - conda-forge
 - defaults
 dependencies:
+- libxcrypt
 - python==3.8
 - pip
 - numpy
