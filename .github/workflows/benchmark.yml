@@ -22,19 +22,19 @@ jobs:
         sudo apt-get update && sudo apt-get install -y libeigen3-dev && \
         git clone "https://github.com/BioPP/bpp-core.git" && \
         cd bpp-core && \
-        cmake . -DCMAKE_INSTALL_PREFIX=/usr && \
+        cmake . -DCMAKE_INSTALL_PREFIX=/usr/local && \
         make && \
         sudo make install && \
         cd .. && \
         git clone "https://github.com/BioPP/bpp-seq.git" && \
         cd bpp-seq && \
-        cmake . -DCMAKE_INSTALL_PREFIX=/usr && \
+        cmake . -DCMAKE_INSTALL_PREFIX=/usr/local && \
         make && \
         sudo make install && \
         cd .. && \
         git clone "https://github.com/BioPP/bpp-phyl.git" && \
         cd bpp-phyl && \
-        cmake . -DCMAKE_INSTALL_PREFIX=/usr && \
+        cmake . -DCMAKE_INSTALL_PREFIX=/usr/local && \
         make && \
         sudo make install && \
         cd ..
