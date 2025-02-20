@@ -1,5 +1,6 @@
 name: benchmark-env
 channels:
+- bioconda
 - conda-forge
 - defaults
 dependencies:

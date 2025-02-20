@@ -5,6 +5,7 @@
 *.txt
 
 # compiled executables
+benchmark_biopp
 benchmark_compact_tree
 yule
 

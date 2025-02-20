@@ -17,6 +17,27 @@ jobs:
         activate-environment: benchmark-env
         environment-file: environment.yml
         auto-activate-base: false
+    - name: Install Bio++
+    - run: |
+        sudo apt-get update && sudo apt-get install -y libeigen3-dev && \
+        git clone "https://github.com/BioPP/bpp-core.git" && \
+        cd bpp-core && \
+        cmake . -DCMAKE_INSTALL_PREFIX=/usr && \
+        make && \
+        sudo make install && \
+        cd .. && \
+        git clone "https://github.com/BioPP/bpp-seq.git" && \
+        cd bpp-seq && \
+        cmake . -DCMAKE_INSTALL_PREFIX=/usr && \
+        make && \
+        sudo make install && \
+        cd .. && \
+        git clone "https://github.com/BioPP/bpp-phyl.git" && \
+        cd bpp-phyl && \
+        cmake . -DCMAKE_INSTALL_PREFIX=/usr && \
+        make && \
+        sudo make install && \
+        cd ..
     - name: Run benchmark
       run: |
         wget -qO- "https://github.com/lczech/genesis/archive/refs/tags/v0.32.0.tar.gz" | tar -zx && \

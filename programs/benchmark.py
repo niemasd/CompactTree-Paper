@@ -7,6 +7,7 @@ Run the CompactTree benchmarks
 EXE_SUFFIX = {
     'ape':           '_ape.R',
     'bigtree':       '_bigtree.py',
+    'Bio++':         '_biopp',
     'Biopython':     '_biopython.py',
     'bp':            '_bp.py',
     'CompactTree':   '_compact_tree',
@@ -20,6 +21,7 @@ EXE_SUFFIX = {
 MAX_N = {
     'ape':                 100000,
     'bigtree':             100000,
+    'Bio++':               100000,
     'Biopython':           100000,
     'bp':                10000000,
     'CompactTree':   float('inf'),
@@ -37,6 +39,7 @@ from os import chdir, mkdir
 from os.path import abspath, dirname, expanduser, isdir, isfile, realpath
 from subprocess import DEVNULL, run
 from sys import argv, stderr
+from treeswift import read_tree_newick
 assert len(argv) == 2, "USAGE: %s <output_directory>" % argv[0]
 
 # helper function to print log messages
@@ -84,7 +87,11 @@ for n in [100, 1000, 10000, 100000, 1000000, 10000000]:
         print_log("    - Running r = %d" % r)
         tree_fn = '%s/n%d.r%s.nwk' % (n_dir, n, str(r).zfill(2))
         print_log("      - Simulating tree...")
-        f = open(tree_fn, 'w'); run(['./yule', '1', '-n', str(n)], stdout=f); f.close()
+        tree = read_tree_newick(run(['./yule', '1', '-n', str(n)], capture_output=True).stdout.decode())
+        for node in tree.traverse_preorder(leaves=False, internal=True):
+            node.label = None
+        tree.write_tree_newick(tree_fn)
+        #f = open(tree_fn, 'w'); run(['./yule', '1', '-n', str(n)], stdout=f); f.close()
         for tool, tool_suffix in EXE_SUFFIX.items():
             if n > MAX_N[tool]:
                 continue
