@@ -5,6 +5,7 @@ Run the CompactTree benchmarks
 
 # definitions
 EXE_SUFFIX = {
+    'ape':           '_ape.R',
     'bigtree':       '_bigtree.py',
     'Biopython':     '_biopython.py',
     'bp':            '_bp.py',
@@ -17,16 +18,17 @@ EXE_SUFFIX = {
     'TreeSwift':     '_treeswift.py',
 }
 MAX_N = {
-    'bigtree':            1000000,
-    'Biopython':          1000000,
+    'ape':                 100000,
+    'bigtree':             100000,
+    'Biopython':           100000,
     'bp':                10000000,
     'CompactTree':   float('inf'),
     'CompactTreePy': float('inf'),
-    'DendroPy':           1000000,
-    'ETE':                1000000,
+    'DendroPy':            100000,
+    'ETE':                 100000,
     'genesis':       float('inf'),
-    'scikit-bio':         1000000,
-    'TreeSwift':          1000000,
+    'scikit-bio':          100000,
+    'TreeSwift':           100000,
 }
 
 # imports and check args
