@@ -18,7 +18,7 @@ jobs:
         environment-file: environment.yml
         auto-activate-base: false
     - name: Install Bio++
-    - run: |
+      run: |
         sudo apt-get update && sudo apt-get install -y libeigen3-dev && \
         git clone "https://github.com/BioPP/bpp-core.git" && \
         cd bpp-core && \
