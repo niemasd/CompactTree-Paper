@@ -40,6 +40,8 @@ jobs:
         cd ..
     - name: Run benchmark
       run: |
+        export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib && \
+        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib && \
         wget -qO- "https://github.com/lczech/genesis/archive/refs/tags/v0.32.0.tar.gz" | tar -zx && \
         cd genesis-* && \
         make && \
