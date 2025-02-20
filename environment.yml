@@ -7,6 +7,9 @@ dependencies:
 - pip
 - numpy
 - cython
+- r-base
+- r-ape
+- r-phytools
 - pip:
   - bigtree
   - biopython
