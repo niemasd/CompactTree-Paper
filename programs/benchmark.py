@@ -21,7 +21,7 @@ EXE_SUFFIX = {
 MAX_N = {
     'ape':                 100000,
     'bigtree':             100000,
-    'Bio++':               100000,
+    'Bio++':                10000,
     'Biopython':           100000,
     'bp':                10000000,
     'CompactTree':   float('inf'),
