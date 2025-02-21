@@ -23,7 +23,7 @@ MAX_N = {
     'bigtree':             100000,
     'Bio++':                10000,
     'Biopython':           100000,
-    'bp':                10000000,
+    'bp':                 1000000,
     'CompactTree':   float('inf'),
     'CompactTreePy': float('inf'),
     'DendroPy':            100000,
