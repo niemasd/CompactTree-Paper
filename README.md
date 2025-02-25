@@ -15,15 +15,10 @@ python3 programs/benchmark.py results
 python3 figures/figures.py results
 ```
 
-The most recent results and figures can be found here:
-
-* Raw benchmark results: https://github.com/niemasd/CompactTree-Paper/releases/latest/download/results.zip
-* Figure showing peak memory usage: https://github.com/niemasd/CompactTree-Paper/releases/latest/download/mem.pdf
-* Figure showing runtime to load a tree: https://github.com/niemasd/CompactTree-Paper/releases/latest/download/load.pdf
-* Figure showing runtime to perform a pre-order traversal: https://github.com/niemasd/CompactTree-Paper/releases/latest/download/preorder.pdf
-* Figure showing runtime to perform a post-order traversal: https://github.com/niemasd/CompactTree-Paper/releases/latest/download/postorder.pdf
+The benchmark results from the final CompactTree paper can be found on GigaDB ([`raw_benchmark_results.zip`](https://s3.ap-northeast-1.wasabisys.com/gigadb-datasets/live/pub/10.5524/102001_103000/102675/raw_benchmark_results.zip)), and the automatically-generated GitHub Actions outputs can be found in the [most recent Release of this GitHub repo](https://github.com/niemasd/CompactTree-Paper/releases/latest).
 
 ## Tools
+* [Bio++ bpp-phyl](https://github.com/BioPP/bpp-phyl)
 * [bigtree](https://github.com/kayjan/bigtree)
 * [Biopython](https://biopython.org/)
 * [bp](https://github.com/biocore/improved-octo-waddle)
