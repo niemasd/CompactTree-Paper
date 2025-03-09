@@ -1,5 +1,7 @@
 # CompactTree-Paper
-Repository to store data/figures for CompactTree paper.
+Repository to store data/figures for CompactTree paper:
+
+> **Moshiri N** (2025). "CompactTree: A lightweight header-only C++ library for ultra-large phylogenetics." *Gigabyte*. [doi:10.46471/gigabyte.152](https://doi.org/10.46471/gigabyte.152)
 
 * **[`programs`](programs)** - Simple programs to benchmark each of the tools
     * **[`programs/benchmark.py`](programs/benchmark.py)** - The main program that runs the entire benchmark
